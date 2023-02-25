@@ -12,7 +12,7 @@ public protocol InjectListener {
 }
 
 /// Public namespace for using Inject API
-public enum Inject {
+public enum InjectionIII {
     @available(iOS 13.0, *)
     public static let observer = injectionObserver
     public static let load: Void = loadInjectionImplementation
@@ -24,7 +24,7 @@ public extension InjectListener {
     /// Ensures injection is enabled
     @inlinable @inline(__always)
     func enableInjection() {
-        _ = Inject.load
+        _ = InjectionIII.load
     }
 }
 
@@ -60,7 +60,7 @@ public class InjectionObserver: ObservableObject {
     fileprivate init() {
         cancellable = NotificationCenter.default.publisher(for: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"))
             .sink { [weak self] _ in
-                if let animation = Inject.animation {
+                if let animation = InjectionIII.animation {
                     withAnimation(animation) {
                         self?.injectionNumber += 1
                     }

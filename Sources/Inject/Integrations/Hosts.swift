@@ -10,7 +10,7 @@ public typealias InjectViewType = NSView
 
 #if DEBUG
 
-extension Inject {
+extension InjectionIII {
     public typealias ViewControllerHost = _InjectableViewControllerHost
     public typealias ViewHost = _InjectableViewHost
 }
@@ -170,7 +170,7 @@ public class _InjectableViewHost<Hosted: InjectViewType>: InjectViewType {
 }
 #else
 
-extension Inject {
+extension InjectionIII {
     public static func ViewControllerHost<Hosted: InjectViewControllerType>(_ viewController: Hosted) -> Hosted {
         viewController
     }
